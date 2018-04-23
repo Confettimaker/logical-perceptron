@@ -45,9 +45,6 @@ int main()
   cout << "Actual: " << output << "\nGuess: " << guess << endl;
   cout << "(" << inputs[0] << " || " << inputs[1] << ")" << " = " << guess << endl;
 
-  correct = 0;
-  incorrect = 0;
-
   //Training perceptron to become an AND gate
 
   And_Gate gate_and;
