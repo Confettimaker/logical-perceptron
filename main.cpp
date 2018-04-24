@@ -1,7 +1,5 @@
 #include <iostream>
 #include "perceptron.h"
-#include "and.h"
-#include "or.h"
 
 using std::cout;
 using std::endl;

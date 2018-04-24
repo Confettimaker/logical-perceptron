@@ -1,13 +1,13 @@
 #ifndef PERCEPTRON_H
 #define PERCEPTRON_H
 
-#include "and.h"
+#include "xor.h"
 
 class Perceptron
 {
   float weights[2];
-  float learn_rate = 0.1;
-  float bias = 0.0001;
+  float learn_rate = 0.01;
+  float bias = 0.01;
   
   public:
     Perceptron()
@@ -19,7 +19,7 @@ class Perceptron
     }
 
     // Activation function
-    int activation(float n)
+    int activation(float n) const
     {
       if ((n - 1.5) < 0)
         return 0;
@@ -35,7 +35,12 @@ class Perceptron
       }
     }
 
-    int guess(float inputs[], int n)
+    float get_weight(const int n) const
+    {
+      return weights[n];
+    }
+
+    int guess(float inputs[], int n) const
     {
       float sum = 0;
       for (int i = 0;i < n;i++)

@@ -23,6 +23,13 @@ class And_Gate
       output = (static_cast<bool>(A) && static_cast<bool>(B));
     }
 
+    void set_values(const int a, const int b)
+    {
+      A = a;
+      B = b;
+      output = (static_cast<bool>(A) && static_cast<bool>(B));
+    }
+
     bool get_output() const
     {
       return output;
