@@ -30,7 +30,7 @@ class Xor_Gate
       output = ((static_cast<bool>(A) || static_cast<bool>(B)) && !(static_cast<bool>(A) && static_cast<bool>(B)));
     }
 
-    void set_values_from_neurons(const int a, const int b)
+    void set_values_from_gates(const int a, const int b)
     {
       A = a;
       B = b;

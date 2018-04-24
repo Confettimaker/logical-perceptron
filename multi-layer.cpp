@@ -82,7 +82,7 @@ int main()
     {
       gate_or.reset_values();
       gate_and.set_values(gate_or.get_a(), gate_or.get_b());
-      gate_xor.set_values_from_neurons(gate_or.get_output(), gate_and.get_output());
+      gate_xor.set_values_from_gates(gate_or.get_output(), gate_and.get_output());
       alt_inputs[0] = gate_or.get_a();
       alt_inputs[1] = gate_or.get_b();
       inputs[0] = p_or.guess(alt_inputs, 2);
