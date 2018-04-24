@@ -74,6 +74,7 @@ int main()
   //Trainging gate_xor perceptron
   train_for = 1000;
   cycles = 100;
+  float alt_inputs[2];
   for (int i = 0;i < train_for;i++)
   {
     correct = incorrect = 0;
@@ -82,8 +83,12 @@ int main()
       gate_or.reset_values();
       gate_and.set_values(gate_or.get_a(), gate_or.get_b());
       gate_xor.set_values_from_neurons(gate_or.get_output(), gate_and.get_output());
-      inputs[0] = gate_xor.get_a();
-      inputs[1] = gate_xor.get_b();
+      alt_inputs[0] = gate_or.get_a();
+      alt_inputs[1] = gate_or.get_b();
+      inputs[0] = p_or.guess(alt_inputs, 2);
+      alt_inputs[0] = gate_and.get_a();
+      alt_inputs[1] = gate_and.get_b();
+      inputs[1] = p_and.guess(alt_inputs, 2);
       guess = p_xor.guess(inputs, 2);
       error = gate_xor.get_output() - guess;
       if (error == 0)
